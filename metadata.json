@@ -1,0 +1,6 @@
+{
+  "name": "LMS EduHub",
+  "description": "Hệ thống quản lý học phí, đăng ký học tập, điểm danh, tự động gửi thông báo email và theo dõi tiến trình của học viên dành cho giảng viên & học sinh.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
