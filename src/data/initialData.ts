@@ -45,13 +45,28 @@ export const INITIAL_COURSES: Course[] = [
     endDate: '2026-09-10',
     totalSessions: 20,
     image: 'https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=800&q=80'
+  },
+  {
+    id: 'course-4',
+    code: 'KNX-TH-2026',
+    title: 'Tập huấn Online cho dự án thi KNX 2026',
+    description: 'Chương trình tập huấn trực tuyến dành cho thí sinh tham gia dự án thi Khởi Nghiệp Xanh (KNX) 2026, gồm 2 buổi: xây dựng kế hoạch kinh doanh hoàn chỉnh & lưu ý khi thi KNX, và cập nhật xu hướng thiết kế bao bì trong thời đại hội nhập kinh tế và chuyển đổi số.',
+    category: 'Tập huấn Khởi nghiệp',
+    instructor: 'CG Vũ Hòa & CG Lê Thị Bích Loan',
+    fee: 0,
+    schedule: ['18/6', '26/6'],
+    time: 'Theo lịch từng buổi (xem Lịch Học)',
+    startDate: '2026-06-18',
+    endDate: '2026-06-26',
+    totalSessions: 2,
+    image: 'https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=800&q=80'
   }
 ];
 
 export const INITIAL_STUDENTS: Student[] = [
   {
     id: 'student-curr',
-    name: 'Trần Quyết Thịnh',
+    name: 'Lê Thị Ngọc Tuyền',
     email: 'thinhtq1609@gmail.com',
     phone: '0987654321',
     studentCode: 'HV2026-9081'
@@ -108,6 +123,15 @@ export const INITIAL_REGISTRATIONS: Registration[] = [
     status: 'completed',
     paymentStatus: 'paid',
     progress: 40
+  },
+  {
+    id: 'reg-5',
+    studentId: 'student-curr',
+    courseId: 'course-4',
+    registrationDate: '2026-06-11',
+    status: 'completed',
+    paymentStatus: 'paid',
+    progress: 0
   }
 ];
 
@@ -227,7 +251,7 @@ export const INITIAL_NOTIFICATIONS: EmailNotification[] = [
     id: 'notif-1',
     toEmail: 'thinhtq1609@gmail.com',
     subject: '📚 Xác nhận đăng ký khóa học: Lập Trình Web ReactJS',
-    body: 'Chào Trần Quyết Thịnh, chúng tôi đã ghi nhận yêu cầu đăng ký của bạn cho khóa học FE-REACT-01. Vui lòng tiến hành thanh toán học phí qua mã QR trong hòm thư cá nhân để kích hoạt chính thức lớp học. Trân trọng!',
+    body: 'Chào Lê Thị Ngọc Tuyền, chúng tôi đã ghi nhận yêu cầu đăng ký của bạn cho khóa học FE-REACT-01. Vui lòng tiến hành thanh toán học phí qua mã QR trong hòm thư cá nhân để kích hoạt chính thức lớp học. Trân trọng!',
     sentAt: '2026-06-01 10:00',
     type: 'registration_confirmation',
     status: 'sent'
@@ -236,7 +260,7 @@ export const INITIAL_NOTIFICATIONS: EmailNotification[] = [
     id: 'notif-2',
     toEmail: 'thinhtq1609@gmail.com',
     subject: '💳 Xác nhận đã nhận đóng học phí thành công',
-    body: 'Chào Trần Quyết Thịnh, hệ thống đã xác nhận khoản học phí 4,200,000đ từ giao dịch MOMO-93829103. Khóa học FE-REACT-01 của bạn đã chính thức được Kích Hoạt. Hãy truy cập Lịch Học để chuẩn bị buổi khai giảng ngày 2026-06-15.',
+    body: 'Chào Lê Thị Ngọc Tuyền, hệ thống đã xác nhận khoản học phí 4,200,000đ từ giao dịch MOMO-93829103. Khóa học FE-REACT-01 của bạn đã chính thức được Kích Hoạt. Hãy truy cập Lịch Học để chuẩn bị buổi khai giảng ngày 2026-06-15.',
     sentAt: '2026-06-01 14:35',
     type: 'payment_received',
     status: 'sent'
@@ -245,7 +269,7 @@ export const INITIAL_NOTIFICATIONS: EmailNotification[] = [
     id: 'notif-3',
     toEmail: 'thinhtq1609@gmail.com',
     subject: '🌟 Nhận xét kết quả học tập & Cập nhật tiến độ học viên',
-    body: 'Bài tập: "Xây dựng layout cá nhân với HTML & CSS"\nĐiểm số: 9.0/10\nNhận xét từ ThS. Nguyễn Văn Sơn: "Layout sạch sẽ, sử dụng Grid và Flexbox tối ưu. Chú ý cải thiện phối màu chữ để có độ tương phản tốt hơn nữa."\nTốt lắm Thịnh, hãy tiếp tục phát huy!',
+    body: 'Bài tập: "Xây dựng layout cá nhân với HTML & CSS"\nĐiểm số: 9.0/10\nNhận xét từ ThS. Nguyễn Văn Sơn: "Layout sạch sẽ, sử dụng Grid và Flexbox tối ưu. Chú ý cải thiện phối màu chữ để có độ tương phản tốt hơn nữa."\nTốt lắm Tuyền, hãy tiếp tục phát huy!',
     sentAt: '2026-06-18 20:00',
     type: 'progress_report',
     status: 'sent'
@@ -332,4 +356,27 @@ export const generateSessions = (courses: Course[]): ClassSession[] => {
   return sessions;
 };
 
-export const INITIAL_SESSIONS = generateSessions(INITIAL_COURSES);
+export const INITIAL_SESSIONS: ClassSession[] = [
+  ...generateSessions(INITIAL_COURSES.filter((c) => c.id !== 'course-4')),
+  // Lịch tập huấn Online cho dự án thi KNX 2026 (2 buổi cố định)
+  {
+    id: 'sess-course-4-1',
+    courseId: 'course-4',
+    sessionNumber: 1,
+    date: '2026-06-18',
+    topic: 'Xây dựng kế hoạch kinh doanh hoàn chỉnh & những lưu ý thi KNX',
+    status: 'upcoming',
+    time: '19:30 - 21:30',
+    instructor: 'CG: Vũ Hòa'
+  },
+  {
+    id: 'sess-course-4-2',
+    courseId: 'course-4',
+    sessionNumber: 2,
+    date: '2026-06-26',
+    topic: 'Xu hướng thiết kế bao bì trong thời đại hội nhập kinh tế và chuyển đổi số',
+    status: 'upcoming',
+    time: '14:00 - 17:00',
+    instructor: 'CG: Lê Thị Bích Loan'
+  }
+];

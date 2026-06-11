@@ -204,7 +204,7 @@ export default function CalendarView({
                       <div>
                         <p className="font-medium font-sans text-slate-200 text-xs">Thời gian buổi học</p>
                         <p className="text-xs text-slate-400 mt-0.5">
-                          {selectedSession.date} | {course?.time}
+                          {selectedSession.date} | {selectedSession.time || course?.time}
                         </p>
                       </div>
                     </div>
@@ -224,7 +224,7 @@ export default function CalendarView({
                       <div>
                         <p className="font-medium font-sans text-slate-200 text-xs">Giảng viên & Phòng học</p>
                         <p className="text-xs text-slate-400 mt-0.5">
-                          {course?.instructor} | Phòng trực tuyến Zoom Pro
+                          {selectedSession.instructor || course?.instructor} | Phòng trực tuyến Zoom Pro
                         </p>
                       </div>
                     </div>

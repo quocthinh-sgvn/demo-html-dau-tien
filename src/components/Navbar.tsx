@@ -74,11 +74,11 @@ export default function Navbar({ role, setRole, unreadEmailsCount }: NavbarProps
 
               <div className="hidden md:flex items-center space-x-2 text-sm bg-slate-950 py-1.5 px-3 rounded-lg border border-slate-800">
                 <div className="h-6 w-6 rounded-full bg-emerald-500/10 flex items-center justify-center text-emerald-400 font-bold text-xs ring-1 ring-emerald-500/30">
-                  {role === 'student' ? 'TQ' : 'NS'}
+                  {role === 'student' ? 'LT' : 'NS'}
                 </div>
                 <div className="text-left">
                   <p className="text-xs font-medium leading-none text-slate-200">
-                    {role === 'student' ? 'Trần Quyết Thịnh' : 'ThS. Nguyễn Văn Sơn'}
+                    {role === 'student' ? 'Lê Thị Ngọc Tuyền' : 'ThS. Nguyễn Văn Sơn'}
                   </p>
                   <p className="text-[10px] font-mono text-slate-500 leading-none mt-1">
                     {role === 'student' ? 'MSSV: HV2026-9081' : 'QL: GIANGVIEN'}

@@ -82,4 +82,6 @@ export interface ClassSession {
   date: string;
   topic: string;
   status: 'upcoming' | 'completed';
+  time?: string;
+  instructor?: string;
 }

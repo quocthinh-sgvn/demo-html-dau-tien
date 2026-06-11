@@ -126,7 +126,7 @@ export default function App() {
       id: `notif-${Date.now()}`,
       toEmail: 'thinhtq1609@gmail.com',
       subject: `📚 Đăng ký thành công khóa học: ${course.title}`,
-      body: `Chào Trần Quyết Thịnh,\n\nHệ thống LMS EduHub xin xác nhận đã nhận được đơn đăng ký học tập của bạn đối với tuyển sinh khóa học:\n\n📖 Tên khóa học: ${course.title}\n🔢 Mã khóa học: ${course.code}\n💳 Học phí khóa học: ${new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(course.fee)}\n\nVui lòng nhấn "Quét mã QR thanh toán" bên dưới góc chi tiết khóa học và nhập mã giao dịch xác thực để chính thức Kích hoạt học phí của bạn.\n\nTrân trọng cảm ơn,\nLMS EduHub Admin.`,
+      body: `Chào Lê Thị Ngọc Tuyền,\n\nHệ thống LMS EduHub xin xác nhận đã nhận được đơn đăng ký học tập của bạn đối với tuyển sinh khóa học:\n\n📖 Tên khóa học: ${course.title}\n🔢 Mã khóa học: ${course.code}\n💳 Học phí khóa học: ${new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(course.fee)}\n\nVui lòng nhấn "Quét mã QR thanh toán" bên dưới góc chi tiết khóa học và nhập mã giao dịch xác thực để chính thức Kích hoạt học phí của bạn.\n\nTrân trọng cảm ơn,\nLMS EduHub Admin.`,
       sentAt: new Date().toLocaleString('vi-VN'),
       type: 'registration_confirmation',
       status: 'sent',
@@ -167,7 +167,7 @@ export default function App() {
       id: `notif-${Date.now()}`,
       toEmail: 'thinhtq1609@gmail.com',
       subject: `💳 Xác nhận thanh toán & Kích hoạt học phí thành công`,
-      body: `Chào Trần Quyết Thịnh,\n\nHệ thống quản lý học phí LMS EduHub xin chân thành cảm ơn bạn đã thanh toán thành công học bổng:\n\n- Khóa học: ${course?.title}\n- Số tiền giao dịch: ${new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(amount)}\n- Mã giao dịch: ${transactionCode}\n\nLớp học của bạn đã chính thức được KÍCH HOẠT THÀNH CÔNG. Hãy truy cập Lịch Trình học tập để chuẩn bị sẵn sàng cho ngày khai giảng ${course?.startDate} súc tích.\n\nChúc bạn có những trải nghiệm học tập tuyệt vời tại EduHub!\nTrân trọng.`,
+      body: `Chào Lê Thị Ngọc Tuyền,\n\nHệ thống quản lý học phí LMS EduHub xin chân thành cảm ơn bạn đã thanh toán thành công học bổng:\n\n- Khóa học: ${course?.title}\n- Số tiền giao dịch: ${new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(amount)}\n- Mã giao dịch: ${transactionCode}\n\nLớp học của bạn đã chính thức được KÍCH HOẠT THÀNH CÔNG. Hãy truy cập Lịch Trình học tập để chuẩn bị sẵn sàng cho ngày khai giảng ${course?.startDate} súc tích.\n\nChúc bạn có những trải nghiệm học tập tuyệt vời tại EduHub!\nTrân trọng.`,
       sentAt: new Date().toLocaleString('vi-VN'),
       type: 'payment_received',
       status: 'sent',
@@ -262,8 +262,8 @@ export default function App() {
               {role === 'student' ? 'CỔNG THÔNG TIN HỌC VIÊN' : 'CƠ QUAN QUẢN LÝ GIẢNG VIÊN'}
             </span>
             <h1 className="text-xl sm:text-2xl font-extrabold text-slate-100 leading-tight">
-              {role === 'student' 
-                ? 'Chào mừng học viên Trần Quyết Thịnh quay trở lại học tập!' 
+              {role === 'student'
+                ? 'Chào mừng học viên Lê Thị Ngọc Tuyền quay trở lại học tập!'
                 : 'Trang quản trị lớp học & Đào tạo chuyên nghiệp'
               }
             </h1>
